@@ -26,6 +26,7 @@ export default function AuthPage({ setUser }) {
     </main>
   );
 }
-// test
+
+// need to implement guest login
 
 

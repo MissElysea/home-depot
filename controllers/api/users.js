@@ -25,6 +25,19 @@ const dataController = {
       res.status(400).json(e)
     }
   },
+  //update put request findbyIdUpdate
+	async update(req, res, next) {
+		try {
+			const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+				new: true
+			});
+			res.locals.data.user = user;
+			next();
+		} catch (e) {
+			res.status(400).json({ message: e.message });
+		}
+	},
+  
   async login(req, res, next) {
     try {
       const user = await User.findOne({ email: req.body.email })
@@ -38,6 +51,7 @@ const dataController = {
       res.status(400).json('Bad Credentials')
     }
   }
+
 }
 
 const apiController = {
