@@ -1,4 +1,4 @@
-import OrderListItem from '../OrderListItem';
+import OrderListItem from './OrderListItem';
 
 export default function OrderList({ orders }) {
   return (
